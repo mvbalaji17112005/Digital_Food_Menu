@@ -1,14 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson.objectid import ObjectId
-from dotenv import load_dotenv
 import os
 
-load_dotenv()
 app = Flask(__name__)
 
-mongo_uri = os.getenv("MONGO_URI")
-client = MongoClient(mongo_uri)
+client = MongoClient(client = MongoClient("mongodb+srv://Balaji:22BCB7289@cluster0.2avlt7z.mongodb.net/")
 db = client["Menu"]
 foods = db["foods"]
 
