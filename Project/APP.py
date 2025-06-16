@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import os
-port = int(os.environ.get('PORT', 10000))
-app.run(host='0.0.0.0', port=port)
 
 app = Flask(__name__)
 
@@ -58,4 +56,5 @@ def delete_food(food_id):
     return redirect(url_for('index', msg="deleted"))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port, debug=True)
