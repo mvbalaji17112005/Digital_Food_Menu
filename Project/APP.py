@@ -5,7 +5,8 @@ import os
 
 app = Flask(__name__)
 
-client = MongoClient("mongodb+srv://Balaji:22BCB7289@cluster0.2avlt7z.mongodb.net/Menu?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://Balaji:22BCB7289@cluster0.2avlt7z.mongodb.net/Menu?retryWrites=true&w=majority&tls=true")
+")
 db = client["Menu"]
 foods = db["foods"]
 
